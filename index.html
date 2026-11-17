@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Informe: Operaciones de una Lista Enlazada</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Segoe UI", "Calibri", Arial, sans-serif;
+    background: #f4f7fb;
+    color: #2b2b2b;
+    line-height: 1.55;
+    padding: 32px 16px;
+  }
+  .page {
+    max-width: 820px;
+    margin: 0 auto;
+    background: #ffffff;
+    border-radius: 14px;
+    box-shadow: 0 6px 24px rgba(31, 78, 121, 0.12);
+    padding: 36px 42px;
+  }
+  header { text-align: center; margin-bottom: 22px; border-bottom: 2px solid #e3ecf5; padding-bottom: 16px; }
+  h1 { color: #1f4e79; font-size: 24px; }
+  .subtitle { color: #6b7c8d; font-style: italic; font-size: 14px; margin-top: 6px; }
+  intro p { margin-bottom: 14px; font-size: 15px; }
+  section { margin: 16px 0 8px; }
+  h2 { color: #1f4e79; font-size: 16px; margin-bottom: 6px; }
+  ul { list-style: none; }
+  li { padding: 3px 0 3px 22px; position: relative; font-size: 14.5px; }
+  li::before { content: "▸"; position: absolute; left: 4px; color: #2f7dbf; font-weight: bold; }
+  code {
+    background: #eef4fa; color: #14436b; border-radius: 4px;
+    padding: 1px 6px; font-family: Consolas, "Courier New", monospace; font-size: 13.5px;
+  }
+  b { color: #14436b; }
+  .conclusion {
+    margin-top: 18px; padding: 12px 16px;
+    background: #f0f6fc; border-left: 4px solid #1f4e79; border-radius: 6px; font-size: 14.5px;
+  }
+  footer { text-align: center; color: #9aa8b5; font-size: 12px; margin-top: 24px; }
+</style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <h1>Informe: Operaciones de una Lista Enlazada</h1>
+      <div class="subtitle">Estructura de datos lineal — explicación de nodos y funciones principales</div>
+    </header>
+
+    <p>La lista enlazada es una estructura de datos lineal formada por nodos enlazados entre sí: cada nodo contiene un valor y un puntero al nodo siguiente (cabeza → … → cola). A continuación se explican sus operaciones principales, las funciones que implementan y su comportamiento.</p>
+
+    <section>
+      <h2>1. Agregar (inserción de nodos)</h2>
+      <ul>
+        <li><b>Agregar:</b> acción general de añadir un nodo a la lista.</li>
+        <li><b>agregarInicio(100):</b> inserta el valor <code>100</code> como nuevo nodo cabeza; O(1) y siempre válido.</li>
+        <li><b>agregarFinal(100):</b> inserta el valor <code>100</code> al final (cola); O(n) si no se mantiene un puntero a la cola.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>2. Eliminar (baja de nodos)</h2>
+      <ul>
+        <li><b>Eliminar:</b> acción general de quitar un nodo de la lista y liberar su memoria.</li>
+        <li><b>eliminarInicio():</b> elimina el nodo cabeza y devuelve la lista al nodo siguiente; O(1).</li>
+        <li><b>eliminarFinal():</b> elimina el último nodo; O(n) en lista simple, pues hay que recorrerla para encontrar el nodo anterior.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>3. Buscar</h2>
+      <ul>
+        <li><b>Buscar:</b> acción de localizar un valor dentro de la lista.</li>
+        <li><b>buscarElemento(100):</b> recorre la lista desde el inicio hasta hallar el valor <code>100</code>; devuelve su posición o indica que no existe; O(n).</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>4. Insertar (sobre posición)</h2>
+      <ul>
+        <li><b>Insertar:</b> acción de añadir un nodo en una posición específica.</li>
+        <li><b>insertarDespuesDe(10, 100):</b> coloca el valor <code>100</code> inmediatamente después del nodo que contiene <code>10</code>; requiere recorrer la lista para encontrar el nodo 10.</li>
+        <li><b>insertarAntesDe(10, 100):</b> coloca el valor <code>100</code> inmediatamente antes del nodo que contiene <code>10</code>; O(n) en lista simple.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>5. Recorrer (navegación y visualización)</h2>
+      <ul>
+        <li><b>Recorrer:</b> acción de visitar nodo por nodo para leer o imprimir la lista.</li>
+        <li><b>MostrarListaInicioFin():</b> imprime la lista desde la cabeza hasta la cola, en orden natural.</li>
+        <li><b>MostrarListaFinInicio():</b> imprime la lista en sentido inverso (cola a cabeza); en lista simple se logra con recursión o pila, y es O(n).</li>
+      </ul>
+    </section>
+
+    <div class="conclusion">
+      <b>Conclusión:</b> Las operaciones de cabecera (agregarInicio, eliminarInicio) son O(1), mientras que las que requieren recorrer la lista (agregarFinal, eliminarFinal, buscar, insertar y el recorrido inverso) son O(n). Esta estructura ofrece inserción y eliminación eficientes en cualquier posición del conjunto.
+    </div>
+
+    <footer>Informe generado sobre operaciones de lista enlazada · zeyniyoimiya-art</footer>
+  </div>
+</body>
+</html>
